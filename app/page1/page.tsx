@@ -1,20 +1,13 @@
-'use client';
+import ClientPage from './clientpage';
 
-import { useState } from 'react';
 
-import XButton from '@components/x-button';
-
-export default function Page1() {
-  const [state, setState] = useState<boolean>(false);
-
-  function handleClick() {
-    setState(!state);
-  }
-
+export default async function Page1() {
+  const a = 123;
+  const apiServerUrl = process.env.API_SERVER ? process.env.API_SERVER : 'no';
+  const props = {
+    data: apiServerUrl
+  };
   return (
-    <div>
-      <p>current: {state ? 'on' : 'off'}</p>
-      <XButton onClick={handleClick}></XButton>
-    </div>
+    <ClientPage props={props}></ClientPage>
   );
 }

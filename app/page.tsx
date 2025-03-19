@@ -1,10 +1,11 @@
-import Link from 'next/link';
+import ClientIndexPage from './clientpage';
 
-export default function Home() {
+import MainLayout from '@components/layouts/main-layout';
+
+export default function IndexPage() {
   return (
-    <div className='flex justify-center items-center gap-4'>
-      <Link href={'/page1'} className='text-blue bg-slate-200'>페이지1</Link>
-      <Link href={'/page2'} className='text-blue bg-slate-200'>페이지2</Link>
-    </div>
+    <MainLayout>
+      <ClientIndexPage />
+    </MainLayout>
   );
 }
